@@ -21,7 +21,7 @@
                 function match(url) {
                     var pattern = rule
                         .replace(/[-[\]{}()|?*+.,\\^$|#\s]/g, '\\$&')
-                        .replace(/(:[a-z]+)/gi, '(\\w+)');
+                        .replace(/(:[a-z]+)/gi, '([\\\w-]+)');
                     pattern = new RegExp('^' + pattern + '$');
                     values = pattern.exec(url);
                     return !!values;
